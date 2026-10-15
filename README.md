@@ -1,5 +1,7 @@
 # Te Liu Portfolio
 
+正式网址：https://te-liu-portfolio.github.io/
+
 刘特个人作品集网站 v1。网站采用纯 HTML、CSS 和少量原生 JavaScript，不需要安装依赖或运行构建工具。
 
 ## 目录
