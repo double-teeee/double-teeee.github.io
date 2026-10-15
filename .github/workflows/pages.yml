@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'dist/**'
+      - 'portfolio-upload-*.zip'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
