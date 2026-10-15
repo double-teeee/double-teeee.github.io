@@ -1,0 +1,6 @@
+.DS_Store
+*.tar.gz
+.site-workflow/
+tmp/
+source-media/
+.openai/
