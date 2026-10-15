@@ -52,7 +52,7 @@
   --radius: 26px;
   --radius-sm: 16px;
   --page: min(1440px, calc(100vw - 48px));
-  --sans: Inter, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --sans: "Alimama FangYuan", "PingFang SC", "Microsoft YaHei", sans-serif;
   --display-sans: "Neue Haas Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --serif: "Editorial New", "Iowan Old Style", "Baskerville", "Times New Roman", serif;
   --round: "Alimama FangYuan", "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -386,6 +386,11 @@ button {
   z-index: 1;
   inset: 0;
   pointer-events: none;
+}
+
+.brand-heading-art,
+.brand-logo-art {
+  display: contents;
 }
 
 .brand-art img {
@@ -1608,14 +1613,15 @@ button {
 .project-number {
   grid-row: 1 / span 2;
   color: var(--muted);
-  font-family: var(--serif);
+  font-family: var(--round);
   font-size: 23px;
-  font-style: italic;
+  font-style: normal;
   line-height: 1;
 }
 
 .project-copy h3 {
   margin: 0;
+  font-family: var(--round);
   font-size: clamp(19px, 1.4vw, 23px);
   font-weight: 700;
   line-height: 1.2;
@@ -2093,7 +2099,7 @@ button {
   gap: 12px;
   margin-top: 10px;
   color: var(--muted);
-  font-family: var(--display-sans);
+  font-family: var(--round);
   font-size: 11px;
   line-height: 1.3;
   letter-spacing: .02em;
@@ -2202,9 +2208,9 @@ button {
 
 .visual-card-caption > span:last-child {
   flex: 0 0 auto;
-  font-family: var(--serif);
+  font-family: var(--round);
   font-size: 16px;
-  font-style: italic;
+  font-style: normal;
 }
 
 .visual-card-caption strong {
@@ -2452,7 +2458,7 @@ body.has-gallery-lightbox {
 
 .art-lightbox figcaption {
   color: var(--paper);
-  font-family: var(--display-sans);
+  font-family: var(--round);
   font-size: 18px;
 }
 
@@ -3034,6 +3040,14 @@ body.has-gallery-lightbox {
     --radius: 19px;
   }
 
+  .home-collections {
+    margin-top: 72px;
+  }
+
+  .home-collection {
+    padding-block: 54px;
+  }
+
   .hero-title {
     font-size: clamp(64px, 24vw, 108px);
     line-height: .77;
@@ -3180,6 +3194,14 @@ body.has-gallery-lightbox {
 
   .social-phone-column:nth-child(3) {
     grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+  }
+
+  .social-phone-column:nth-child(3) .social-phone-card {
+    width: min(100%, 180px);
+    justify-self: center;
   }
 
   .social-phone-caption {
@@ -3256,6 +3278,50 @@ body.has-gallery-lightbox {
 
 /* Keep the poster composition above readable, touch-friendly mobile content. */
 @media (max-width: 900px) {
+  .brand-layered {
+    padding: 28px 20px 48px;
+    aspect-ratio: auto;
+  }
+
+  .brand-art {
+    position: relative;
+    display: grid;
+    gap: 28px;
+  }
+
+  .brand-heading-art,
+  .brand-logo-art {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  /* Crop the transparent canvas around the existing artwork layers. */
+  .brand-heading-art {
+    width: min(76%, 340px);
+    aspect-ratio: 1097 / 926;
+  }
+
+  .brand-heading-art img {
+    top: -25.27%;
+    left: 0;
+    width: 218.78%;
+  }
+
+  .brand-logo-art {
+    aspect-ratio: 1137 / 884;
+  }
+
+  .brand-logo-art img {
+    top: -26.47%;
+    left: -102.29%;
+    width: 211.08%;
+  }
+
+  .brand-art > [data-brand-layer="spiral"] {
+    display: none;
+  }
+
   .about-layered,
   .thanks-layered {
     display: flex;
